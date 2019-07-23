@@ -117,7 +117,7 @@ def All_Bundle_Getter(orderno, entries):  # returns all bundle of an order
    strentries = str(entries)
    query = '''SELECT  DISTINCT TOP (''' + strentries + ''') [bundleID]
    FROM [cfl_spts].[cfl_spts].[progresscomplete]
-   where [orderID] = ''' + orderno + ''' and bundleID in ('80','5000','5001','5002','5004')'''
+   where [orderID] = ''' + orderno + ''' '''
    df = Query_Runner(query)
    AllBundle = list(df['bundleID'])
    return AllBundle
