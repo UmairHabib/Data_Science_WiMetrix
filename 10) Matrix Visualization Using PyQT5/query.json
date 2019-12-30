@@ -1,0 +1,5 @@
+{
+  "lineDataGetter": "select  time,p_time,operationAutoID,workerID,quantity,SMV from [us2_spts].[dbo].[previousData] where workerID = '?' and operationAutoID= '?' and  p_time >= '?' and  p_time <= '?' order by time",
+  "countGetter": "select  count(*) as 'count' from [us2_spts].[dbo].[progressComplete]  where workerID = '?' and operationAutoID= '?' and  p_time >= '?' and  p_time <= '?' ",
+  "remainingDataGetter": "select  time,p_time,operationAutoID,workerID,quantity,SMV from [us2_spts].[dbo].[progressComplete] where time > CAST('?' AS DATETIME2) and workerID = '?' and operationAutoID= '?' and  p_time >= '?' and  p_time <= '?'  order by time"
+}
